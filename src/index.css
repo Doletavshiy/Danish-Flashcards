@@ -1,5 +1,5 @@
 body {
-    background-image: url('bg.jpg'); 
+    background-image: url('./assets/bg.jpg');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -69,14 +69,14 @@ body {
 .front {
     background-color: white;
     color: #333;
-    background-image: url('card-bg.jpg');
+    background-image: url('./assets/card-bg.jpg');
     background-size: cover;
     background-position: center;
 }
 .back {
     background-color: #E31836;
     color: rgb(5, 5, 5);
-    background-image: url('card-bg.jpg');
+    background-image: url('./assets/card-bg.jpg');
     background-size: cover;
     background-position: center;
     transform: rotateY(180deg);
