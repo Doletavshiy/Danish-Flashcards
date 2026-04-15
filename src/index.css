@@ -1,0 +1,179 @@
+body {
+    background-image: url('bg.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    justify-content: center;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.lang-switcher {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+}
+.flag {
+    width: 40px;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.3s, transform 0.3s;
+}
+.flag:hover {
+    opacity: 0.8;
+}
+.flag.active {
+    opacity: 1;
+    transform: scale(1.2);
+}
+.card-container {
+    width: 300px;
+    height: 200px;
+    margin-top: 30px;
+    perspective: 1000px;
+}
+.flashcard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    font-size: 36px;
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.front {
+    background-color: white;
+    color: #333;
+    background-image: url('card-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.back {
+    background-color: #E31836;
+    color: rgb(5, 5, 5);
+    background-image: url('card-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+}
+.flashcard.flip {
+    transform: rotateY(180deg);
+}
+.side-card {
+    transform: scale(0.7);
+    opacity: 0.5;
+    pointer-events: none;
+}
+.main-card {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 2;
+}
+.carousel {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.arrow-btn {
+    background: none;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+}
+.add-btn {
+    margin-top: 50px;
+    border: none;
+    background-color: hsl(172, 88%, 44%);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.add-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(227, 24, 54, 0.4);
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    display:flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 350px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+.modal-content h2 {
+    text-align: center;
+    margin-top: 0;
+}
+.modal-content input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;    
+}
+.modal-actions {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 10px; 
+}
+.cancel-btn, .save-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.cancel-btn {
+    background-color: #e0e0e0;
+    color: #333;
+}
+.save-btn {
+    background-color: #E31836;
+    color: white;
+}
+.hidden {
+    display: none !important;
+}
